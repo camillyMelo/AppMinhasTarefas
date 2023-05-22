@@ -1,5 +1,7 @@
 package br.edu.ifsp.arq.minhastarefas.model.dao;
 
+import android.content.Context;
+
 import java.util.List;
 
 import br.edu.ifsp.arq.minhastarefas.model.entities.Tarefa;
@@ -17,4 +19,6 @@ public interface ITarefaDao {
     List<Tarefa> findByTag(Tag tag);
 
     List<Tarefa> findAll();
+
+    void setContext (Context context);
 }
