@@ -48,7 +48,7 @@ public class TarefaDetailsPresenter implements TarefaDetailsMVP.Presenter {
         }else{
             //Update a existent article
             String oldTitle = tarefa.getNomeTarefa();
-            Tarefa newTarefa= new Tarefa(nomeTarefa,descricao, data, prioridade, tarefa.isImportant());
+            Tarefa newTarefa= new Tarefa(nomeTarefa,descricao, data, prioridade);
             if(dao.update(oldTitle, newTarefa)){
                 view.showToast("Tarefa atualizada com sucesso.");
                 view.close();
