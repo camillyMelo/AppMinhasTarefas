@@ -1,5 +1,6 @@
 package br.edu.ifsp.arq.minhastarefas.presenter;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import br.edu.ifsp.arq.minhastarefas.model.dao.TarefaDaoSingleton;
@@ -13,11 +14,14 @@ public class TarefaDetailsPresenter implements TarefaDetailsMVP.Presenter {
     private TarefaDetailsMVP.View view;
     private Tarefa tarefa;
     private ITarefaDao dao;
+    private Context context;
 
     public TarefaDetailsPresenter(TarefaDetailsMVP.View view) {
         this.view = view;
         tarefa = null;
         dao = TarefaDaoSingleton.getInstance();
+        context = view.getContext();
+        dao.setContext(context);
     }
 
     @Override
