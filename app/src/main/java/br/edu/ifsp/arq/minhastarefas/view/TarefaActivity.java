@@ -35,6 +35,7 @@ public class TarefaActivity extends AppCompatActivity implements TarefaDetailsMV
 
     private EditText mNomeTarefaEditText;
     private Spinner mPrioridadeSpinner;
+    private EditText descriptionEditText;
     String prioridadeTarefaValue;
     private TextView mDataTarefaTextView;
     private Button mSalvarButton;
@@ -101,11 +102,12 @@ public class TarefaActivity extends AppCompatActivity implements TarefaDetailsMV
         if(v == mSalvarButton){
             presenter.saveTarefa(
                     mNomeTarefaEditText.getText().toString(),
+                    descriptionEditText.getText().toString(),
                     mDataTarefaTextView.getText().toString(),
                     pri);
 
         }
-       
+
     }
 
 
@@ -120,10 +122,11 @@ public class TarefaActivity extends AppCompatActivity implements TarefaDetailsMV
 
 
     @Override
-    public void updateUI(String nomeTarefa, String data, int prioridade) {
+    public void updateUI(String nomeTarefa, String descricao, String data, int prioridade) {
         mNomeTarefaEditText.setText(nomeTarefa);
         mDataTarefaTextView.setText(data);
-prioridadeTarefaValue = getPriorityInt(prioridade);
+        descriptionEditText.setText(descricao);
+        prioridadeTarefaValue = getPriorityInt(prioridade);
     }
 
     @Override
@@ -180,6 +183,7 @@ prioridadeTarefaValue = getPriorityInt(prioridade);
     private void findViews() {
         mNomeTarefaEditText = findViewById(R.id.edit_nome_tarefa);
         mPrioridadeSpinner = findViewById(R.id.spinner_prioridade);
+        descriptionEditText = findViewById(R.id.edittext_description_details);
         mDataTarefaTextView = findViewById(R.id.text_edit_data);
         mSalvarButton = findViewById(R.id.button_salvar);
 
@@ -200,7 +204,7 @@ prioridadeTarefaValue = getPriorityInt(prioridade);
         return priority;
     }
     public String getPriorityInt(int pri) {
-         String priority = null ;
+        String priority = null ;
         switch (pri) {
             case 1:
                 priority = Constantes.PRIORITY_HIGH_STRING;

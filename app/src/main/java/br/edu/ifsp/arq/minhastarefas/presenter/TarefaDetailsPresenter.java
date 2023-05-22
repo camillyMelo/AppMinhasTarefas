@@ -32,23 +32,23 @@ public class TarefaDetailsPresenter implements TarefaDetailsMVP.Presenter {
         if(bundle != null){
             title = bundle.getString(Constantes.ATTR_TITLE);
             tarefa = dao.findByTitle(title);
-            view.updateUI(tarefa.getNomeTarefa(), tarefa.getData(), tarefa.getPrioridade());
+            view.updateUI(tarefa.getNomeTarefa(), tarefa.getDescricao(), tarefa.getData(), tarefa.getPrioridade());
         }
     }
 
     @Override
-    public void saveTarefa(String nomeTarefa, String data, int prioridade) {
+    public void saveTarefa(String nomeTarefa, String descricao, String data, int prioridade) {
 
         if(tarefa == null){
             //New article
-            tarefa = new Tarefa(nomeTarefa, data, prioridade);
+            tarefa = new Tarefa(nomeTarefa, descricao, data, prioridade);
             dao.create(tarefa);
             view.showToast("Nova tarefa adicionada com sucesso.");
             view.close();
         }else{
             //Update a existent article
             String oldTitle = tarefa.getNomeTarefa();
-            Tarefa newTarefa= new Tarefa(nomeTarefa, data, prioridade, tarefa.isImportant());
+            Tarefa newTarefa= new Tarefa(nomeTarefa,descricao, data, prioridade, tarefa.isImportant());
             if(dao.update(oldTitle, newTarefa)){
                 view.showToast("Tarefa atualizada com sucesso.");
                 view.close();

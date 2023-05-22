@@ -20,7 +20,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        />
+
+
+    <EditText
+        android:id="@+id/edittext_description_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Descrição"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/edit_nome_tarefa"
+        app:layout_constraintStart_toStartOf="@id/edit_nome_tarefa"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome_tarefa" />
 
     <TextView
         android:id="@+id/text_sel_pri"
@@ -32,10 +47,9 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_nome_tarefa"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_description_details"
         android:text="Selecione a prioridade"
         />
-
     <Spinner
         android:id="@+id/spinner_prioridade"
         android:layout_width="0dp"
@@ -47,6 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_sel_pri"/>
+
 
     <TextView
         android:id="@+id/text_data"

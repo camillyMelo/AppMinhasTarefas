@@ -5,7 +5,7 @@ import android.os.Bundle;
 public interface TarefaDetailsMVP {
 
     interface View{
-        void updateUI(String nomeTarefa, String data, int prioridade);
+        void updateUI(String nomeTarefa, String descricao, String data, int prioridade);
 
         Bundle getBundle();
 
@@ -19,6 +19,6 @@ public interface TarefaDetailsMVP {
 
         void verifyUpdate();
 
-        void saveTarefa(String nomeTarefa, String data, int prioridade);
+        void saveTarefa(String nomeTarefa, String descricao, String data, int prioridade);
     }
 }
