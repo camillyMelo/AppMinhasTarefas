@@ -72,10 +72,19 @@ public class ItemPocketAdapter extends ArrayAdapter {
         Tarefa tarefa = (Tarefa) getItem(position);
         holder.taskTitleView.setText(tarefa.getNomeTarefa());
 
-        if(tarefa.isImportant()){
-            holder.priorityImageView.setColorFilter(getContext().getColor(R.color.pink));
-        }else{
-            holder.priorityImageView.setColorFilter(getContext().getColor(R.color.white));
+        switch (tarefa.getPrioridade()) {
+            case 1:
+                holder.priorityImageView.setColorFilter(getContext().getColor(R.color.pink_high));
+                break;
+            case 2:
+                holder.priorityImageView.setColorFilter(getContext().getColor(R.color.pink_medium));
+                break;
+            case 3:
+                holder.priorityImageView.setColorFilter(getContext().getColor(R.color.pink_low));
+                break;
+            default:
+                holder.priorityImageView.setColorFilter(getContext().getColor(R.color.white));
+                break;
         }
         return convertView;
     }
