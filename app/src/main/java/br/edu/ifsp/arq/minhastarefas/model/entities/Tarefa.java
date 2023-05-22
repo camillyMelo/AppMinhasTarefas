@@ -11,7 +11,6 @@ public class Tarefa implements Comparable<Tarefa>{
         private int prioridade;
         private String descricao;
         private String data;
-        private boolean important;
         private List<Tag> tags;
 
         private void init(){
@@ -31,7 +30,6 @@ public class Tarefa implements Comparable<Tarefa>{
                 this.data = data;
                 this.setDescricao(getDescricao());
                 this.prioridade = prioridade;
-                this.important = important;
                 init();
         }
 
@@ -78,13 +76,6 @@ public class Tarefa implements Comparable<Tarefa>{
                 return tags;
         }
 
-        public Boolean isImportant() {
-                return important;
-        }
-
-        public void setImportant(Boolean important) {
-                this.important = important;
-        }
 
         @NonNull
         @Override
@@ -94,9 +85,7 @@ public class Tarefa implements Comparable<Tarefa>{
 
         @Override
         public int compareTo(Tarefa t) {
-                //return this.isImportant().compareTo(task.isImportant());
-                return Comparator.comparing(Tarefa::isImportant).reversed().thenComparing(Tarefa::getNomeTarefa).compare(this, t);
-                //return this.title.compareTo(task.title);
+                return Comparator.comparing(Tarefa::getPrioridade).reversed().thenComparing(Tarefa::getNomeTarefa).compare(this, t);
 
         }
 
