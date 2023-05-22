@@ -53,7 +53,7 @@ public class MainPresenter implements MainMVP.Presenter {
 
     @Override
     public void favoriteTarefa(Tarefa tarefa) {
-        tarefa.setImportant(!tarefa.isImportant());
+        tarefa.setPrioridade(tarefa.getPrioridade());
         dao.update(tarefa.getNomeTarefa(), tarefa);
     }
 
