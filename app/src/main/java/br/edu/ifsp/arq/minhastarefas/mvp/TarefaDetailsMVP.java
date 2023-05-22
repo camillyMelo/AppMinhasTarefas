@@ -1,5 +1,6 @@
 package br.edu.ifsp.arq.minhastarefas.mvp;
 
+import android.content.Context;
 import android.os.Bundle;
 
 public interface TarefaDetailsMVP {
@@ -12,6 +13,7 @@ public interface TarefaDetailsMVP {
         void showToast(String message);
 
         void close();
+        Context getContext();
     }
 
     interface Presenter{
