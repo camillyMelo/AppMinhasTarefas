@@ -19,8 +19,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
+import android.content.Context;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -110,7 +110,9 @@ public class TarefaActivity extends AppCompatActivity implements TarefaDetailsMV
 
     }
 
-
+    public Context getContext() {
+        return this;
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home){
