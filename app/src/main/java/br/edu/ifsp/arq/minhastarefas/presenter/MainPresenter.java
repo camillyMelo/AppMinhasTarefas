@@ -1,5 +1,6 @@
 package br.edu.ifsp.arq.minhastarefas.presenter;
 
+import android.content.Context;
 import android.content.Intent;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,10 +18,12 @@ public class MainPresenter implements MainMVP.Presenter {
 
     private MainMVP.View view;
     private ITarefaDao dao;
-
+    private Context context;
     public MainPresenter(MainMVP.View view) {
         this.view = view;
         dao = TarefaDaoSingleton.getInstance();
+        context = view.getContext();
+        dao.setContext(context);
     }
 
     @Override
