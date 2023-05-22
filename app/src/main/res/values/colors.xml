@@ -11,4 +11,8 @@
     <color name="pink_dark">#DF665D</color>
     <color name="yellow">#FFF8B8</color>
 
+    
+    <color name="pink_high">#DF665D</color>
+    <color name="pink_medium">#EF9A93</color>
+    <color name="pink_low">#F6C6C2</color>
 </resources>
