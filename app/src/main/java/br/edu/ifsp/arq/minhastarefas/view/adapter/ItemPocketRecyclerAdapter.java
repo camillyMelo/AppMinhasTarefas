@@ -45,10 +45,19 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Tarefa tarefa = data.get(position);
         holder.titleTextView.setText(tarefa.getNomeTarefa());
-        if(tarefa.isImportant()){
-            holder.priorityImageView.setColorFilter(context.getColor(R.color.pink));
-        }else{
-            holder.priorityImageView.setColorFilter(context.getColor(R.color.white));
+     switch (tarefa.getPrioridade()) {
+            case 1:
+                holder.priorityImageView.setColorFilter(context.getColor(R.color.pink_high));
+                break;
+            case 2:
+                holder.priorityImageView.setColorFilter(context.getColor(R.color.pink_medium));
+                break;
+            case 3:
+                holder.priorityImageView.setColorFilter(context.getColor(R.color.pink_low));
+                break;
+            default:
+                holder.priorityImageView.setColorFilter(context.getColor(R.color.white));
+                break;
         }
         holder.priorityImageView.setOnClickListener(new View.OnClickListener() {
             @Override
