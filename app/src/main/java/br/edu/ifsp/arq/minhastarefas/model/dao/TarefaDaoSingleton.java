@@ -14,10 +14,11 @@ public class TarefaDaoSingleton implements ITarefaDao {
 
     private TarefaDaoSingleton() {
         tarefaList = new ArrayList<Tarefa>();
-        tarefaList.add(new Tarefa("Prova Redes","Materia: Camada de redes", "23/5/2023", 2));
+        tarefaList.add(new Tarefa("Prova Redes","Materia: Camada de redes", "23/5/2023", 1));
         tarefaList.add(new Tarefa("Projeto DMO","Primeira fase feita","22/5/2023", 1));
-        tarefaList.add(new Tarefa("Stop Motion IHC2", "Adicionar efeitos sonoros","24/5/2023", 3));
-        tarefaList.add(new Tarefa("Site Web","Alterar css", "26/5/2023", 1));
+        tarefaList.add(new Tarefa("Stop Motion IHC2", "Adicionar efeitos sonoros","24/5/2023", 2));
+        tarefaList.add(new Tarefa("Site Web","Alterar css", "26/5/2023", 3));
+
 
     }
 
